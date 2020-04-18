@@ -8,10 +8,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from bs4 import  SoupStrainer
 import file_move
-
+from song_input import song_name_func
 
 #song name to download
-song = "mere liye tum kaafi ho"
+
+song = song_name_func()
 song+="\n"
 
 
@@ -37,6 +38,7 @@ downloader_url = "https://ytmp3.cc/en13/"
 #downloading the song
 driver.get(downloader_url)
 driver.find_element_by_xpath('//*[@id="input"]').send_keys(song_link)
+time.sleep(1)
 driver.find_element_by_xpath('//*[@id="submit"]').click()
 time.sleep(3)
 driver.find_element_by_xpath('//*[@id="buttons"]/a[1]').click()
