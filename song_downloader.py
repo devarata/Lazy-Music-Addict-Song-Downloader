@@ -7,13 +7,12 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from bs4 import  SoupStrainer
+import file_move
+
 
 #song name to download
-song = "Shayad song love aaj kal"
+song = "mere liye tum kaafi ho"
 song+="\n"
-
-
-#configuration to save it to particular directory rather than default(downloads)
 
 
 #driver
@@ -41,3 +40,7 @@ driver.find_element_by_xpath('//*[@id="input"]').send_keys(song_link)
 driver.find_element_by_xpath('//*[@id="submit"]').click()
 time.sleep(3)
 driver.find_element_by_xpath('//*[@id="buttons"]/a[1]').click()
+
+#file is downloading -- wait for 2mins then move the filename
+time.sleep(120)
+file_move.moving()

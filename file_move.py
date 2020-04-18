@@ -20,6 +20,3 @@ def moving():
 
 
     os.rename(latest_file,destination)
-
-
-moving()
