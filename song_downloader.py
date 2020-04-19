@@ -44,7 +44,7 @@ if song!="":
     time.sleep(3)
     driver.find_element_by_xpath('//*[@id="buttons"]/a[1]').click()
 
-    #file is downloading -- wait for 2mins then move the filename
-    time.sleep(120)
+    #file is downloading -- wait for 60seconds then move the filename
+    #change according to your internet speed
+    time.sleep(60)
     file_move.moving()
-    
