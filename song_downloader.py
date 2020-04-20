@@ -48,3 +48,5 @@ if song!="":
     #change according to your internet speed
     time.sleep(60)
     file_move.moving()
+
+    driver.quit()

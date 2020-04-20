@@ -10,8 +10,8 @@ def moving():
     filename = filename[len(filename)-1]
     print(filename)
     #change according to your convenience
-    destination="C:\\Users\\devar\\Desktop\\MyDownloadedSongs"
-
+    #destination="C:\\Users\\devar\\Desktop\\MyDownloadedSongs"
+    destination="C:\\Users\\devar\\Music\\Playlists"
     if not os.path.exists(destination):
         os.makedirs(destination)
 
