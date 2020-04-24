@@ -46,7 +46,7 @@ if song!="":
 
     #file is downloading -- wait for 60seconds then move the filename
     #change according to your internet speed
-    time.sleep(60)
+    time.sleep(30)
     file_move.moving()
     driver.stop_client()
-    driver.close()
+    driver.quit()

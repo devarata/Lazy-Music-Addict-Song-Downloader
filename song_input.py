@@ -32,14 +32,6 @@ def song_name(root,final_song):
     canvas.create_window(200, 140, window=entry1)
     button1 = tk.Button(text='Download', command=lambda:getSong(entry1,root), bg='brown', fg='white', font=('helvetica', 9, 'bold'))
     canvas.create_window(200, 180, window=button1)
-
-    #print("Song:",song.get())
-
-
-
-
-
-
     root.mainloop()
 
 
