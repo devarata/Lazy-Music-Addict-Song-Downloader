@@ -22,8 +22,9 @@ if song!="":
     url = "https://www.google.com/"
     driver.get(url)
     song+="\n"
+    wait = WebDriverWait(driver,10)
     #search input of google
-    driver.find_element_by_xpath('//*[@id="tsf"]/div[2]/div[1]/div[1]/div/div[2]/input').send_keys(song)
+    wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="tsf"]/div[2]/div[1]/div[1]/div/div[2]/input'))).send_keys(song)
     page = Soup(driver.page_source,'lxml')
     html= driver.page_source
     song_link = ""
@@ -36,13 +37,13 @@ if song!="":
     #url for site that converts youtube videos to mp3
     downloader_url = "https://ytmp3.cc/en13/"
 
-    #downloading the song
     driver.get(downloader_url)
-    driver.find_element_by_xpath('//*[@id="input"]').send_keys(song_link)
-    time.sleep(1)
-    driver.find_element_by_xpath('//*[@id="submit"]').click()
-    time.sleep(3)
-    driver.find_element_by_xpath('//*[@id="buttons"]/a[1]').click()
+    wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="input"]'))).send_keys(song_link)
+
+    wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="submit"]'))).click()
+
+    wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="buttons"]/a[1]'))).click()
+
 
     #file is downloading -- wait for 60seconds then move the filename
     #change according to your internet speed

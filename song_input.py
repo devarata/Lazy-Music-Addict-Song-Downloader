@@ -6,7 +6,7 @@ import tkinter.messagebox as mb
 
 
 def getSong(entry1,root):
-    outF = open("output.txt","w")
+    outF = open("C:\\Users\\devar\\Desktop\\gitprojects\\Lazy-Music-Addict-Song-Downloader\\output.txt","w")
     outF.write(entry1.get())
     outF.close()
     root.destroy()
@@ -15,7 +15,7 @@ def getSong(entry1,root):
 
 def song_name(root,final_song):
     try:
-        os.remove("output.txt")
+        os.remove("C:\\Users\\devar\\Desktop\\gitprojects\\Lazy-Music-Addict-Song-Downloader\\output.txt")
     except OSError:
         pass
     canvas = tk.Canvas(root, width = 400, height = 300,  relief = 'raised',bg = "#ccffcc")
@@ -29,6 +29,7 @@ def song_name(root,final_song):
     label2.config(bg = "#ccffcc")
     canvas.create_window(200, 100, window=label2)
     entry1 = tk.Entry(root)
+    entry1.focus()
     canvas.create_window(200, 140, window=entry1)
     button1 = tk.Button(text='Download', command=lambda:getSong(entry1,root), bg='brown', fg='white', font=('helvetica', 9, 'bold'))
     canvas.create_window(200, 180, window=button1)
@@ -41,7 +42,7 @@ def song_name_func():
     final_song = ""
     song_name(root,final_song)
     try:
-        with open('output.txt','r') as f:
+        with open('C:\\Users\\devar\\Desktop\\gitprojects\\Lazy-Music-Addict-Song-Downloader\\output.txt','r') as f:
             final_song = f.readline()
     except FileNotFoundError:
             mb.showerror('Output','closed the box without entering anything')
